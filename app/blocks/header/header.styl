@@ -1,2 +1,114 @@
 .header
-	display block
+	&__in
+		@extends .in
+		padding-top 23px
+	&__top
+		margin-bottom 53px
+		font-size 0
+	&__logo
+	&__text,
+	&__contacts
+		display inline-block
+		vertical-align top
+	// &__logo
+
+	&__text
+		margin-top 24px
+		margin-left 72px
+		width 630px
+		font-family $times
+		line-height 1
+		font-size 30px
+		line-height 40px
+		text-align center
+		span
+			display block
+			font-size 35px
+	&__contacts
+		margin-top 27px
+		margin-left 90px
+		width 300px
+	// &__nav
+
+
+.logo
+	retinaSprite($logo_group)
+	hide-text()
+
+
+.contacts
+	font-family $tahoma
+	font-size 20px
+	&__phone
+		display block
+		font-size 28px
+		line-height 50px
+		text-decoration none
+		color inherit
+
+
+.nav
+	margin auto
+	width 980px
+	min-height 38px
+	background url('../images/general/nav.png') 50% 0 no-repeat
+	border-radius 3px
+	&__list
+		text-align justify
+		font-size 0
+		&:after
+			display inline-block
+			content ''
+			width 100%
+			height 0
+	&__item
+		position relative
+		z-index 1
+		display inline-block
+		vertical-align top
+		&:before
+			position absolute
+			top 3px
+			left 0
+			content ''
+			retinaSprite($nav_item_sep_group)
+		&:first-child
+			&:before
+				display none
+		&:hover
+			.sub-nav
+				display block
+	&__link
+		padding 10px 48px 12px
+		display block
+		font-size 16px
+		line-height 1
+		color inherit
+		text-decoration none
+		&:hover
+			color #eebd7e
+.sub-nav
+	position absolute
+	top 100%
+	left 0
+	padding-top 7px
+	padding-bottom 7px
+	display none
+	width 458px
+	min-height 1px
+	background #3D0207
+	&__item
+		&.is-active,
+		&:hover
+			background #730c16
+	&__link
+		padding-top 13px
+		padding-right 40px
+		padding-bottom 10px
+		padding-left 40px
+		display block
+		font-size 16px
+		color inherit
+		text-decoration none
+
+

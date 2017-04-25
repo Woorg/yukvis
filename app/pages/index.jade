@@ -11,58 +11,9 @@ block content
 	.page__w
 		.page__w-w
 			+header()
-				.header__in
-					.header__top
-						.header__logo.logo(href="/") Дом быта - Юквис
-						h1.header__text <span>Профессиональная ювелирная мастерская</span> c 2000 г. на Преображенской площади
-						.header__contacts.contacts
-							span тел.: 8 (495) 603-15-01
-							| Большая Черкизовская д.5 к.3
-					nav.header__nav.nav
-						ul.nav__list
-							li.nav__item
-								a.nav__link(href="#link") О нас
-							li.nav__item
-								a.nav__link(href="#link") Наши работы
-							li.nav__item
-								a.nav__link(href="#link") Отзывы
-							li.nav__item
-								a.nav__link(href="#link") Другие услуги дома быта
-								ul.sub-nav__list
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Ремонт часов
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Ремонт бытовой техники
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Заточка
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Ремонт швейных машин
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Ремонт электроники
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Металлоремонт
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Химчистка, прачечная. Ремонт и пошив одежды
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Фото
-									li.sub-nav__item
-										a.sub-nav__link(href="#link") Изготовление печатей
-							li.nav__item
-								a.nav__link(href="#link") Схема проезда
 			main.main
-				+slider()
-					.slider
-						ul.slider__list
-							li.slider__item
-								a.slider__link(href="#link")
-									img.slider__img(src="assets/images/content/slider-img-1.jpg", alt="slider img")
-							li.slider__item
-								a.slider__link(href="#link")
-									img.slider__img(src="assets/images/content/slider-img-1.jpg", alt="slider img")
-						.slider__nav
-							a.slider__next(href="#next") Вперед
-							a.slider__prev(href="#prev") Назад
+				.main__in
+					+slider()
 
 			+footer()
-				.footer__in
-					small.footer__copyright © 2000г. ЮКВИС, Большая Черкизовская д.5 к.3    тел.: 8(495) 603-15-01
+

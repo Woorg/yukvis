@@ -1,2 +1,35 @@
 .slider
-	display block
+	padding-top 23px
+
+	&__list
+		position relative
+		border 3px solid #cc9966
+		// max-width 1276px
+		height auto
+	// &__item
+
+	&__link
+		display block
+	&__img
+		max-width 100%
+		height auto
+	// &__nav
+
+
+	&__next,
+	&__prev
+		position absolute
+		z-index 1
+		top 50%
+		margin-top -33px
+		display block
+		hide-text()
+		transition opacity .2s ease
+		&:hover
+			opacity .8
+	&__next
+		right 14px
+		retinaSprite($slider_next_group)
+	&__prev
+		left 14px
+		retinaSprite($slider_back_group)
