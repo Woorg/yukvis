@@ -8,6 +8,8 @@ mixin header()
 					a.contacts__phone(href="tel:+84956031501") тел.: 8 (495) 603-15-01
 					| Большая Черкизовская д.5 к.3
 			nav.header__nav.nav
+				label.nav__trigger(for='mobile-trigger') Меню
+				input.nav__checkbox#mobile-trigger(type="checkbox" value='')
 				ul.nav__list
 					li.nav__item
 						a.nav__link(href="#link") О нас

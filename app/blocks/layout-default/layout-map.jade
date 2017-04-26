@@ -1,0 +1,40 @@
+include /../node_modules/bemto.jade/bemto
+include /../node_modules/jade-injected/jade-injected
+include ../page/page
+include ../scripts/scripts
+
+doctype html
+html(lang='ru')
+	include ../head/head
+	+page
+		block content
+		+scripts(['//api-maps.yandex.ru/2.1/?lang=ru_RU', 'app.min.js'])
+
+		script.
+			ymaps.ready(init);
+
+			function init() {
+				const myMap = new ymaps.Map('map', {
+					center: [ 55.797868, 37.719982 ],
+					zoom: 17
+				});
+
+				myPlacemark = new ymaps.Placemark([55.798099, 37.719835], {}, {
+					iconLayout: 'default#image',
+					iconImageHref: 'assets/images/general/map-marker.jpg',
+					iconImageSize: [152, 78],
+					iconImageOffset: [-70, -62]
+				});
+
+				myMap.geoObjects.add(myPlacemark);
+
+				ymaps.route(['55.796982, 37.717088', '55.797822, 37.719940'], {
+					multiRoute: true,
+					routingMode: 'pedestrian'
+				}).done(function (route) {
+					route.options.set("mapStateAutoApply", true );
+					myMap.geoObjects.add(route);
+				}, function (err) {
+					throw err;
+				}, this);
+			}

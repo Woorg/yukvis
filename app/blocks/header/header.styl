@@ -3,56 +3,101 @@
 		@extends .in
 		padding-top 23px
 	&__top
-		margin-bottom 53px
+		margin-bottom 50px
 		font-size 0
 	&__logo
 	&__text,
 	&__contacts
 		display inline-block
 		vertical-align top
-	// &__logo
-
+	&__logo
+		+below(1024px)
+			margin auto
+			display block
 	&__text
-		margin-top 24px
-		margin-left 72px
-		width 630px
+		margin-top 18px
+		// margin-left 72px
+		margin-left ratio-percentage(72,1310)
+		// width 630px
+		width ratio-percentage(630,1310)
 		font-family $times
 		line-height 1
 		font-size 30px
 		line-height 40px
 		text-align center
+		+below(1310px)
+			margin-left ratio-percentage(12,1310)
+			font-size 20px
+		+below(1024px)
+			display block
+			margin auto
+			width auto
+		+below(425px)
+			font-size 16px
+			line-height 33px
 		span
 			display block
 			font-size 35px
+			+below(1310px)
+				font-size 30px
+			+below(425px)
+				font-size 25px
 	&__contacts
-		margin-top 27px
-		margin-left 90px
-		width 300px
-	// &__nav
-
-
+		margin-top 13px
+		// margin-left 90px
+		margin-left ratio-percentage(90,1310)
+		// width 300px
+		width ratio-percentage(300,1310)
+		+below(1310px)
+			margin-left ratio-percentage(12,1310)
+			text-align right
+			white-space nowrap
+		+below(1024px)
+			margin auto
+			display block
+			width auto
+			text-align center
 .logo
 	retinaSprite($logo_group)
 	hide-text()
-
-
 .contacts
 	font-family $tahoma
 	font-size 20px
+	+below(1310px)
+		font-size 16px
 	&__phone
 		display block
 		font-size 28px
 		line-height 50px
 		text-decoration none
 		color inherit
-
+		+below(1310px)
+			font-size 23px
+		+below(425px)
+			font-size 19px
 
 .nav
 	margin auto
-	width 980px
+	max-width 980px
 	min-height 38px
 	background url('../images/general/nav.png') 50% 0 no-repeat
 	border-radius 3px
+	+below(980px)
+		background #62011c
+	&__trigger
+		border none
+		padding-top 10px
+		padding-bottom 12px
+		display none
+		background transparent
+		font-size 20px
+		color #FFF
+		cursor pointer
+		text-align center
+		+below(980px)
+			width 100%
+			display block
+
 	&__list
 		text-align justify
 		font-size 0
@@ -61,17 +106,35 @@
 			content ''
 			width 100%
 			height 0
+		+below(980px)
+			display none
+	&__checkbox
+		display none
+		&:checked ~
+			.nav__list
+				display block
+		+above(980px)
+			&:checked ~
+				.nav__list
+					display block
+
+
 	&__item
 		position relative
 		z-index 1
 		display inline-block
 		vertical-align top
+		+below(980px)
+			display block
+			text-align center
 		&:before
 			position absolute
 			top 3px
 			left 0
 			content ''
 			retinaSprite($nav_item_sep_group)
+			+below(980px)
+				display none
 		&:first-child
 			&:before
 				display none
@@ -87,6 +150,9 @@
 		text-decoration none
 		&:hover
 			color #eebd7e
+		+below(980px)
+			padding-left 10px
+			padding-right 10px
 .sub-nav
 	position absolute
 	top 100%
@@ -97,6 +163,9 @@
 	width 458px
 	min-height 1px
 	background #3D0207
+	+below(980px)
+		position static
+		width auto
 	&__item
 		&.is-active,
 		&:hover

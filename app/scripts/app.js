@@ -1,10 +1,14 @@
 import svg4everybody from 'svg4everybody';
 import $ from 'jquery';
 import 'slick-carousel';
+import 'magnific-popup';
+
 
 $(() => {
 	svg4everybody();
 
+
+	// slider
 
 	const $slider = $('.slider__list');
 
@@ -17,4 +21,29 @@ $(() => {
 	});
 
 
+	// magnific popup
+
+	$('.works__link').magnificPopup({
+		type: 'image',
+		gallery: {
+			enabled: true
+		},
+		mainClass: 'works-popup',
+		closeBtnInside: true,
+		fixedContentPos: false
+	});
+
+
+
+
+
+
 });
+
+
+
+
+
+
+
+

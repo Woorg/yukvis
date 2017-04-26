@@ -7,64 +7,86 @@ body
 	color #ffffff
 
 .page
+	&__in
+		overflow hidden
 	&__w
 		position relative
+		overflow hidden
+
 		&:after,
 		&:before
 			position absolute
 			z-index 2
 			top -20px
-			border 10px solid #440b13
+			width 56px
+			height 56px
+			border 10px solid transparent
 			content ''
-			background #440b13
+			// background #440b13
 		&:after
 			left -20px
-			retinaSprite($top_left_group)
+			background url('../images/general/top-left.png') 0 0 no-repeat, url('../images/general/bg.jpg') 0 0 no-repeat
+			// retinaSprite($top_left_group)
 		&:before
 			right -20px
-			retinaSprite($top_right_group)
+			background url('../images/general/top-right.png') 0 0 no-repeat, url('../images/general/bg.jpg')
+			// retinaSprite($top_right_group)
 	&__w-w
 		position relative
+		margin 2px
 		box-shadow 0px 0px 1px 1px #cc9966
 		&:after,
 		&:before
 			position absolute
 			z-index 1
 			bottom -20px
-			border 10px solid #440b13
+			width 56px
+			height 56px
+			border 10px solid transparent
 			content ''
-			background #440b13
+			// background #440b13
 		&:after
 			left -20px
-			retinaSprite($bottom_left_group)
+			background url('../images/general/bottom-left.png') 0 0 no-repeat, url('../images/general/bg.jpg')
+			// retinaSprite($bottom_left_group)
 		&:before
 			right -20px
-			retinaSprite($bottom_right_group)
+			background url('../images/general/bottom-right.png') 100% 100% no-repeat, url('../images/general/bg.jpg')
+
+			// retinaSprite($bottom_right_group)
 
 
-html,
-body,
-.page__w
-	height 100%
 
-.page
-	&__w-w
-		display table
-		width 100%
-		height 100%
-.header,
-.main,
-.footer
-	display table-row
-	height 1px
-.main
-	height 100%
+// .page
+// 	&__w-w
+// 		min-height 100%
+// 		margin-bottom -74px
+// 		// display table
+// 		// width 100%
+// 		// height 100%
+// .header,
+// .main,
+// .footer
+// 	display table-row
+// .main
+// 	height 100%
 
 // container
 
 .in
 	margin auto
-	max-width 1310px
+	width 1310px
+	+below(1310px)
+		padding-left 10px
+		padding-right 10px
+		width auto
+.in_second
+	margin auto
+	width 980px
+	+below(980px)
+		padding-left 10px
+		padding-right 10px
+		width auto
 
 // wysiwyg
 
@@ -73,4 +95,50 @@ body,
 	p
 		margin-bottom 35px
 		line-height 24px
+		color inherit
+	strong,
+	span
+		font-weight bold
 
+	h1
+		margin-bottom 26px
+		font-size 24px
+	h2
+		margin-bottom 26px
+		font-size 20px
+	h3
+		margin-bottom 26px
+		font-size 16px
+	hr
+		border none
+		border-top 1px solid #cc9966
+		background transparent
+		margin-bottom 35px
+
+	.align-left
+		margin-right 35px
+		margin-bottom 35px
+		max-width 100%
+		float left
+		+below(768px)
+			float none
+	.align-right
+		margin-left 35px
+		margin-bottom 35px
+		max-width 100%
+		float right
+		+below(768px)
+			float none
+	img
+		max-width 100%
+		height auto
+
+	table
+		margin-bottom 35px
+		width 100%
+		td
+			border 1px solid #cc9966
+			padding 30px
+			width 50%
+			&:nth-child(2n)
+				text-align center

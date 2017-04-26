@@ -1,2 +1,38 @@
 .reviews
-	display block
+	&__list
+		font-size 0
+		color #6D6D6D
+	&__item
+		margin-right ratio-percentage(100,980)
+		margin-bottom ratio-percentage(88,980)
+		display inline-block
+		vertical-align top
+		width ratio-percentage(256,980)
+		background #FFF
+		box-shadow inset 0 0 0px 1px  #e6e7e8
+		&:nth-child(3n)
+			margin-right 0
+		+below(1024px)
+			margin-right ratio-percentage(15,980)
+			width 49%
+			&:nth-child(2n)
+				margin-right 0
+			&:nth-child(3n)
+				margin-right ratio-percentage(15,980)
+		+below(425px)
+			margin-right 0
+			width auto
+			&:nth-child(3n)
+				margin-right 0
+	&__text
+		padding 20px
+		@extends .wysiwyg
+		p
+			margin-bottom 0
+	&__author
+		border-top 1px solid #e6e7e8
+		padding-top 15px
+		padding-bottom 15px
+		background #F5F5F5
+		font-size 14px
+		text-align center

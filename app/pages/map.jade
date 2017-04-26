@@ -1,0 +1,34 @@
+extends /blocks/layout-default/layout-map
+
+include ../blocks/header/header
+include ../blocks/breadcrumbs/breadcrumbs
+include ../blocks/map/map
+
+include ../blocks/footer/footer
+
+block head
+	- var pageTitle = 'Работы';
+
+block content
+	.page__w
+		.page__w-w
+			+header()
+			main.main
+				.main__in.main_inner
+					+breadcrumbs()
+						ol.breadcrumbs__list(itemscope="", itemtype="http://schema.org/BreadcrumbList")
+							li.breadcrumbs__item(itemprop="itemListElement", itemscope="", itemtype="http://schema.org/ListItem")
+								a.breadcrumbs__link(itemprop="item", href="")
+									span(itemprop="name") Главная
+								| -->
+								meta(itemprop="position", content="1")
+							li.breadcrumbs__item(itemprop="itemListElement", itemscope="", itemtype="http://schema.org/ListItem")
+								a.breadcrumbs__link(itemprop="item", href="")
+									span(itemprop="name")  Схема проезда
+								meta(itemprop="position", content="2")
+
+					+map()
+
+
+			+footer()
+

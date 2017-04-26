@@ -1,0 +1,44 @@
+.works
+	display block
+	font-size 0
+	&__item
+		margin-right ratio-percentage(40,980)
+		margin-bottom ratio-percentage(44,980)
+		display inline-block
+		vertical-align top
+		width ratio-percentage(300,980)
+		height auto
+		&:nth-child(3n)
+			margin-right 0
+		+below(375px)
+			margin-right 0
+			width auto
+
+	&__link
+		display block
+		cursor pointer
+	&__image
+		max-width 100%
+		height auto
+
+
+.works-popup
+	background transparent
+	img
+		padding 0
+	.mfp-figure
+		position relative
+		padding 0
+	.mfp-close
+		position absolute
+		top 16px
+		right 16px
+		retinaSprite($close_group)
+		opacity 1
+		hide-text()
+		cursor pointer
+
+	.mfp-image-holder
+		button.mfp-close
+			cursor pointer
+
