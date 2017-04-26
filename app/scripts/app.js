@@ -30,7 +30,15 @@ $(() => {
 		},
 		mainClass: 'works-popup',
 		closeBtnInside: true,
-		fixedContentPos: false
+		// fixedContentPos: false,
+		removalDelay: 500,
+		callbacks: {
+			beforeOpen: function() {
+				// just a hack that adds mfp-anim class to markup
+				this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'works-popup mfp-figure mfp-with-anim');
+				this.st.mainClass = this.st.el.attr('data-effect');
+			}
+		}
 	});
 
 
